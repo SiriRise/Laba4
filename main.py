@@ -9,8 +9,6 @@ import numpy as np
 from matplotlib import pyplot as plt
 import seaborn as sns
 
-
-
 try:
     k = int(input("Введите число являющееся коэффициентом при умножении: "))
     n = int(input("Введите число больше 3 которое являеться рзмером матрицы: "))
