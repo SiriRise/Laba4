@@ -40,11 +40,11 @@ try:
     trace = np.trace(F) + np.trace(np.rot90(F))
     print("Определитель матрицы А:" , int(det),"\nСумма диагональных элементов матрицы F:" , trace)
     if det > trace:
-        print("Определитель матрицы А больше суммы диагональных элементов матрицы F", int(det) ,">",trace, "вычисляем выражение A^(-1)*A^T-K*F^(-1)")
+        print("Определитель матрицы А больше суммы диагональных элементов матрицы F", det ,">",trace, "вычисляем выражение A^(-1)*A^T-K*F^(-1)")
         result = np.linalg.inv(A) * np.transpose(A) - k * np.linalg.inv(F)
         print(result)
     else:
-        print("Определитель матрицы А меньше суммы диагональных элементов матрицы F", int(det) ,"<",trace, "вычисляем выражение (A^T+G-F^T)*K")
+        print("Определитель матрицы А меньше суммы диагональных элементов матрицы F", det ,"<",trace, "вычисляем выражение (A^T+G-F^T)*K")
         G = np.tri(n) * A
         result = (A.transpose() + G - F.transpose()) * k
         print(result)
